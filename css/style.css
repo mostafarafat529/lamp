@@ -1,0 +1,108 @@
+body{
+    background-color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+body.on{
+    background: radial-gradient(#555 ,#111);
+}
+.bulb{
+    width: 80px;
+    height: 80px;
+    background-color: #777;
+    border-radius: 50%;
+    position: relative;
+}
+body.on .bulb{
+    background: #fff;
+    box-shadow:0 0 50px #fff ,
+    0 0 100px #fff ,
+    0 0 150px #fff ,
+    0 0 200px #fff ;
+}
+.bulb::before{
+    content: "";
+    position:absolute;
+    background-color: #777;
+    width: 30px;
+    height: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -50px;
+    border-top: 30px solid #000;
+    border-radius: 20px;
+    z-index: -1;
+}
+body.on .bulb::before{
+    background: #fff;
+    box-shadow:0 0 50px #fff ,
+    0 0 100px #fff ,
+    0 0 150px #fff ,
+    0 0 200px #fff ,
+    0 0 250px #fff ,
+    0 0 300px #fff ,
+    0 0 350px #fff ;
+    
+}
+body.on .bulb:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 120px;
+    background: #fff;
+    border-radius: 50%;
+    filter: blur(40PX);
+}
+.bulb .wire{
+    height: 300px;
+    width: 3px;
+    position: absolute;
+    left: 50%;
+    background-color: #000;
+transform: translateX(-50%);
+bottom: 120px;
+z-index: -2;
+}
+.switch{
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(#eee , #ccc , #eee);
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+
+}
+    .switch .btn{
+        width: 20px;
+        height: 40px;
+        position: relative;
+        background: linear-gradient(#555 , #fff , #555);
+        border: 2px solid #000;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .switch .btn::before{
+        content: "";
+        width: 100%;
+        height: 75%;
+        background-color: #fff;
+        position: absolute;
+        /* top: 23%; */
+        top: 0;  
+        left: 0;
+        border-radius: 6px;
+    }
+
+    .on .switch .btn::before{
+        top: 23%;
+    }
